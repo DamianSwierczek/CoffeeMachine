@@ -1,4 +1,4 @@
-package Enums;
+package coffeemachine;
 
 public enum Money {
     MONEY(500);

@@ -1,6 +1,6 @@
-package Enums;
+package coffeemachine;
 
-public enum Resources {
+public enum FirstMachineResource {
     MILK(400),
     WATER(540),
     CUPS(12),
@@ -8,7 +8,7 @@ public enum Resources {
 
     private int value;
 
-    Resources(int value) {
+    FirstMachineResource(int value) {
         this.value = value;
     }
 

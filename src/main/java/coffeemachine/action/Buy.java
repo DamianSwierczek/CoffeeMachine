@@ -1,78 +1,78 @@
-package Actions;
+package coffeemachine.action;
 
 public class Buy extends Action {
 
     public void getAction() {
         System.out.println("What do you want to buy? 1 - espresso, 2 - latte, 3 - cappucino, 4 - back to main menu.");
-        takeStringInput();
-        switch (getStringInput()) {
+        String buyInput = scanner.nextLine();
+        switch (buyInput) {
             case "1":
-                if (resources.WATER.getValue() < coffeeVariations.ESPRESSO.getWaterSize()) {
+                if (firstMachineResource.WATER.getValue() < coffeeVariation.ESPRESSO.getWaterSize()) {
                     System.out.println("Sorry, can't get you a coffee. Not enough water");
                     break;
-                } else if (resources.MILK.getValue() < coffeeVariations.ESPRESSO.getMilkSize()) {
+                } else if (firstMachineResource.MILK.getValue() < coffeeVariation.ESPRESSO.getMilkSize()) {
                     System.out.println("Sorry, can't get you a coffee. Not enough milk");
                     break;
-                } else if (resources.BEANS.getValue() < coffeeVariations.ESPRESSO.getCoffeeBeans()) {
+                } else if (firstMachineResource.BEANS.getValue() < coffeeVariation.ESPRESSO.getCoffeeBeans()) {
                     System.out.println("Sorry, can't get you a coffee. Not enough coffee beans");
                     break;
-                } else if (resources.CUPS.getValue() < 1) {
+                } else if (firstMachineResource.CUPS.getValue() < 1) {
                     System.out.println("Sorry, can't get you a coffee. Not enough cups.");
                     break;
                 } else {
-                    tossACoinToYourMachine(getStringInput());
+                    tossACoinToYourMachine(buyInput);
                     System.out.println("Preparing a coffee..");
-                    resources.WATER.setValue(resources.WATER.getValue() - coffeeVariations.ESPRESSO.getWaterSize());
-                    resources.MILK.setValue(resources.MILK.getValue() - coffeeVariations.ESPRESSO.getMilkSize());
-                    resources.BEANS.setValue(resources.BEANS.getValue() - coffeeVariations.ESPRESSO.getCoffeeBeans());
-                    resources.CUPS.setValue(resources.CUPS.getValue() - 1);
-                    money.MONEY.setValue(money.MONEY.getValue() + coffeeVariations.ESPRESSO.getCost());
+                    firstMachineResource.WATER.setValue(firstMachineResource.WATER.getValue() - coffeeVariation.ESPRESSO.getWaterSize());
+                    firstMachineResource.MILK.setValue(firstMachineResource.MILK.getValue() - coffeeVariation.ESPRESSO.getMilkSize());
+                    firstMachineResource.BEANS.setValue(firstMachineResource.BEANS.getValue() - coffeeVariation.ESPRESSO.getCoffeeBeans());
+                    firstMachineResource.CUPS.setValue(firstMachineResource.CUPS.getValue() - 1);
+                    money.MONEY.setValue(money.MONEY.getValue() + coffeeVariation.ESPRESSO.getCost());
                     break;
                 }
             case "2":
-                if (resources.WATER.getValue() < coffeeVariations.LATTE.getWaterSize()) {
+                if (firstMachineResource.WATER.getValue() < coffeeVariation.LATTE.getWaterSize()) {
                     System.out.println("Sorry, can't get you a coffee. Not enough water");
                     break;
-                } else if (resources.MILK.getValue() < coffeeVariations.LATTE.getMilkSize()) {
+                } else if (firstMachineResource.MILK.getValue() < coffeeVariation.LATTE.getMilkSize()) {
                     System.out.println("Sorry, can't get you a coffee. Not enough milk");
                     break;
-                } else if (resources.BEANS.getValue() < coffeeVariations.LATTE.getCoffeeBeans()) {
+                } else if (firstMachineResource.BEANS.getValue() < coffeeVariation.LATTE.getCoffeeBeans()) {
                     System.out.println("Sorry, can't get you a coffee. Not enough coffee beans");
                     break;
-                } else if (resources.CUPS.getValue() < 1) {
+                } else if (firstMachineResource.CUPS.getValue() < 1) {
                     System.out.println("Sorry, can't get you a coffee. Not enough cups.");
                     break;
                 } else {
-                    tossACoinToYourMachine(getStringInput());
+                    tossACoinToYourMachine(buyInput);
                     System.out.println("Preparing a coffee..");
-                    resources.WATER.setValue(resources.WATER.getValue() - coffeeVariations.LATTE.getWaterSize());
-                    resources.MILK.setValue(resources.MILK.getValue() - coffeeVariations.LATTE.getMilkSize());
-                    resources.BEANS.setValue(resources.BEANS.getValue() - coffeeVariations.LATTE.getCoffeeBeans());
-                    resources.CUPS.setValue(resources.CUPS.getValue() - 1);
-                    money.MONEY.setValue(money.MONEY.getValue() + coffeeVariations.LATTE.getCost());
+                    firstMachineResource.WATER.setValue(firstMachineResource.WATER.getValue() - coffeeVariation.LATTE.getWaterSize());
+                    firstMachineResource.MILK.setValue(firstMachineResource.MILK.getValue() - coffeeVariation.LATTE.getMilkSize());
+                    firstMachineResource.BEANS.setValue(firstMachineResource.BEANS.getValue() - coffeeVariation.LATTE.getCoffeeBeans());
+                    firstMachineResource.CUPS.setValue(firstMachineResource.CUPS.getValue() - 1);
+                    money.MONEY.setValue(money.MONEY.getValue() + coffeeVariation.LATTE.getCost());
                     break;
                 }
             case "3":
-                if (resources.WATER.getValue() < coffeeVariations.CAPPUCINO.getWaterSize()) {
+                if (firstMachineResource.WATER.getValue() < coffeeVariation.CAPPUCINO.getWaterSize()) {
                     System.out.println("Sorry, can't get you a coffee. Not enough water");
                     break;
-                } else if (resources.MILK.getValue() < coffeeVariations.CAPPUCINO.getMilkSize()) {
+                } else if (firstMachineResource.MILK.getValue() < coffeeVariation.CAPPUCINO.getMilkSize()) {
                     System.out.println("Sorry, can't get you a coffee. Not enough milk");
                     break;
-                } else if (resources.BEANS.getValue() < coffeeVariations.CAPPUCINO.getCoffeeBeans()) {
+                } else if (firstMachineResource.BEANS.getValue() < coffeeVariation.CAPPUCINO.getCoffeeBeans()) {
                     System.out.println("Sorry, can't get you a coffee. Not enough coffee beans");
                     break;
-                } else if (resources.CUPS.getValue() < 1) {
+                } else if (firstMachineResource.CUPS.getValue() < 1) {
                     System.out.println("Sorry, can't get you a coffee. Not enough cups.");
                     break;
                 } else {
-                    tossACoinToYourMachine(getStringInput());
+                    tossACoinToYourMachine(buyInput);
                     System.out.println("Preparing a coffee..");
-                    resources.WATER.setValue(resources.WATER.getValue() - coffeeVariations.CAPPUCINO.getWaterSize());
-                    resources.MILK.setValue(resources.MILK.getValue() - coffeeVariations.CAPPUCINO.getMilkSize());
-                    resources.BEANS.setValue(resources.BEANS.getValue() - coffeeVariations.CAPPUCINO.getCoffeeBeans());
-                    resources.CUPS.setValue(resources.CUPS.getValue() - 1);
-                    money.MONEY.setValue(money.MONEY.getValue() + coffeeVariations.CAPPUCINO.getCost());
+                    firstMachineResource.WATER.setValue(firstMachineResource.WATER.getValue() - coffeeVariation.CAPPUCINO.getWaterSize());
+                    firstMachineResource.MILK.setValue(firstMachineResource.MILK.getValue() - coffeeVariation.CAPPUCINO.getMilkSize());
+                    firstMachineResource.BEANS.setValue(firstMachineResource.BEANS.getValue() - coffeeVariation.CAPPUCINO.getCoffeeBeans());
+                    firstMachineResource.CUPS.setValue(firstMachineResource.CUPS.getValue() - 1);
+                    money.MONEY.setValue(money.MONEY.getValue() + coffeeVariation.CAPPUCINO.getCost());
                     break;
                 }
             case "4":
@@ -88,19 +88,19 @@ public class Buy extends Action {
         switch (input) {
             case "1":
                 System.out.println("Toss a coin to machine.");
-                System.out.println("Remaining: \n" + coffeeVariations.ESPRESSO.getCost() + "zł\n" + "Example: 0,50");
-                takeDoubleInput();
-                double espressoCost = coffeeVariations.ESPRESSO.getCost() - getDoubleInput();
+                System.out.println("Remaining: \n" + coffeeVariation.ESPRESSO.getCost() + "zł\n" + "Example: 0,50");
+                double espressoCoinValue = scanner.nextDouble();
+                double espressoCost = coffeeVariation.ESPRESSO.getCost() - espressoCoinValue;
                 System.out.println("Remaining: ");
                 System.out.format("%.2f zł %n", espressoCost);
                 int espressoExiter = 0;
-                while(espressoExiter != 1) {
+                while (espressoExiter != 1) {
                     if (espressoCost > 0) {
                         double tempEspressoCost = espressoCost;
                         System.out.println("Toss a coin to machine.");
-                        takeDoubleInput();
-                        espressoCost = tempEspressoCost - getDoubleInput();
-                        if(espressoCost > 0) {
+                        double tempEspressoCoinValue = scanner.nextDouble();
+                        espressoCost = tempEspressoCost - tempEspressoCoinValue;
+                        if (espressoCost > 0) {
                             System.out.println("Remaining: ");
                             System.out.format("%.2f zł %n", espressoCost);
                         }
@@ -114,19 +114,19 @@ public class Buy extends Action {
                 break;
             case "2":
                 System.out.println("Toss a coin to machine.");
-                System.out.println("Remaining: \n" + coffeeVariations.LATTE.getCost() + "złn" + "Example: 0,50");
-                takeDoubleInput();
-                double latteCost = coffeeVariations.LATTE.getCost() - getDoubleInput();
+                System.out.println("Remaining: \n" + coffeeVariation.LATTE.getCost() + "złn" + "Example: 0,50");
+                double coinLatteValue = scanner.nextDouble();
+                double latteCost = coffeeVariation.LATTE.getCost() - coinLatteValue;
                 System.out.println("Remaining: ");
                 System.out.format("%.2f zł %n", latteCost);
                 int latteExiter = 0;
-                while(latteExiter != 1) {
+                while (latteExiter != 1) {
                     if (latteCost > 0) {
                         double tempLatteCost = latteCost;
                         System.out.println("Toss a coin to machine.");
-                        takeDoubleInput();
-                        latteCost = tempLatteCost - getDoubleInput();
-                        if(latteCost > 0){
+                        double tempCoinLatteValue = scanner.nextDouble();
+                        latteCost = tempLatteCost - tempCoinLatteValue;
+                        if (latteCost > 0) {
                             System.out.println("Remaining: ");
                             System.out.format("%.2f zł %n", latteCost);
                         }
@@ -140,19 +140,19 @@ public class Buy extends Action {
                 break;
             case "3":
                 System.out.println("Toss a coin to machine.");
-                System.out.println("Remaining: \n" + coffeeVariations.CAPPUCINO.getCost() + "złn" + "Example: 0,50");
-                takeDoubleInput();
-                double cappucinoCost = coffeeVariations.CAPPUCINO.getCost() - getDoubleInput();
+                System.out.println("Remaining: \n" + coffeeVariation.CAPPUCINO.getCost() + "złn" + "Example: 0,50");
+                double coinCappucinoValue = scanner.nextDouble();
+                double cappucinoCost = coffeeVariation.CAPPUCINO.getCost() - coinCappucinoValue;
                 System.out.println("Remaining: ");
                 System.out.format("%.2f zł %n", cappucinoCost);
                 int cappucinoExiter = 0;
-                while(cappucinoExiter != 1) {
+                while (cappucinoExiter != 1) {
                     if (cappucinoCost > 0) {
                         double tempCappucinoCost = cappucinoCost;
                         System.out.println("Toss a coin to machine.");
-                        takeDoubleInput();
-                        cappucinoCost = tempCappucinoCost - getDoubleInput();
-                        if(cappucinoCost > 0){
+                        double coinTempCappucinoValue = scanner.nextDouble();
+                        cappucinoCost = tempCappucinoCost - coinTempCappucinoValue;
+                        if (cappucinoCost > 0) {
                             System.out.println("Remaining: ");
                             System.out.format("%.2f zł %n", cappucinoCost);
                         }

@@ -1,4 +1,4 @@
-package Actions;
+package coffeemachine.action;
 
 public class TakeMoney extends Action {
 
