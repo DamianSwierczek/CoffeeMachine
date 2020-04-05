@@ -1,18 +1,22 @@
-package Main;
+package coffeemachine;
 
-import Actions.*;
-import InputTaker.InputTaker;
+import coffeemachine.action.Action;
+import coffeemachine.action.Buy;
+import coffeemachine.action.FillResource;
+import coffeemachine.action.Remaining;
+import coffeemachine.action.TakeMoney;
+import java.util.Scanner;
 
 public class MainCoffee {
     public static void main(String[] args) {
 
         MainCoffee mainObject = new MainCoffee();
-        InputTaker inputTaker = new InputTaker();
+        Scanner scanner = new Scanner(System.in);
 
-        while(true) {
+        while (true) {
             System.out.println("Write action (buy, fill, take, remaining, exit)");
-            inputTaker.takeStringInput();
-            mainObject.callToAction(inputTaker.getStringInput()).getAction();
+            String actionInput = scanner.nextLine();
+            mainObject.callToAction(actionInput).getAction();
         }
     }
 
@@ -23,15 +27,15 @@ public class MainCoffee {
             kawa = new Remaining();
         } else if (action.equals("buy")) {
             kawa = new Buy();
-        } else if (action.equals("fill")){
-            kawa = new FillResources();
-        } else if (action.equals("take")){
+        } else if (action.equals("fill")) {
+            kawa = new FillResource();
+        } else if (action.equals("take")) {
             kawa = new TakeMoney();
         } else if (action.equals("exit")) {
             System.out.println("Goodbye");
             System.exit(0);
         } else {
-            kawa = new Action();
+            System.out.println("Wrong action");
         }
         return kawa;
     }

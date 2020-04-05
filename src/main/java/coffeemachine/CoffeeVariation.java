@@ -1,16 +1,16 @@
-package Enums;
+package coffeemachine;
 
-public enum CoffeeVariations {
-    ESPRESSO(200,0,16,3.50),
-    LATTE(350,75,20,5.50),
-    CAPPUCINO(200,100,12,6.50);
+public enum CoffeeVariation {
+    ESPRESSO(200, 0, 16, 3.50),
+    LATTE(350, 75, 20, 5.50),
+    CAPPUCINO(200, 100, 12, 6.50);
 
-    private int waterSize;
-    private int milkSize;
-    private int coffeeBeans;
-    private double cost;
+    private final int waterSize;
+    private final int milkSize;
+    private final int coffeeBeans;
+    private final double cost;
 
-    CoffeeVariations(int waterSize, int milkSize, int coffeeBeans, double cost) {
+    CoffeeVariation(int waterSize, int milkSize, int coffeeBeans, double cost) {
         this.waterSize = waterSize;
         this.milkSize = milkSize;
         this.coffeeBeans = coffeeBeans;
